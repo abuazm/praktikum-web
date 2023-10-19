@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (mysqli_stmt_execute($stmt)) {
         mysqli_stmt_close($stmt);
-        header("Location: halamanuser.php"); // Redirect kembali ke halaman utama
+        header("Location: halamanuser.php"); 
         exit();
     } else {
         echo "Error: " . mysqli_error($conn);
@@ -23,7 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } elseif (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    // Ambil data pengguna dari database
     $query = "SELECT * FROM user WHERE id = ?";
     $stmt = mysqli_prepare($conn, $query);
     mysqli_stmt_bind_param($stmt, "i", $id);
@@ -33,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($row = mysqli_fetch_assoc($result)) {
         $nama = $row["nama"];
         $email = $row["email"];
-        // Anda mungkin tidak ingin menampilkan kata sandi di sini
+        
     } else {
         echo "Pengguna tidak ditemukan.";
     }

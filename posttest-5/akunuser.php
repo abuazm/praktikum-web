@@ -1,8 +1,0 @@
-
-<?php
-require "koneksi.php";
-
-?>
-
-
-

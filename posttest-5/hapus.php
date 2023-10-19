@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["id"])) {
 
     if (mysqli_stmt_execute($stmt)) {
         mysqli_stmt_close($stmt);
-        header("Location: halamanuser.php"); // Redirect kembali ke halaman utama
+        header("Location: halamanuser.php");
         exit();
     } else {
         echo "Error: " . mysqli_error($conn);

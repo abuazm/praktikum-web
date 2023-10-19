@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "insert into user (nama, email, password) VALUES ('$nama', '$email', '$password')";
 
     if (mysqli_query($conn, $query)) {
-        //header("Location: index.php"); // Redirect kembali ke halaman utama
+        
     } else {
         echo "Error: " . $query . "<br>" . mysqli_error($conn);
     }
